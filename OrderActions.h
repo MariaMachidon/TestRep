@@ -127,33 +127,6 @@ void searchForOrderByCustomerAndStatus(char* customer, char* orderStatus)
 	lr_end_transaction(transaction, LR_PASS);
 }
 
-void getCreditMemoInfo()
-{
-
-	char* transaction = "getCreditMemoInfo";
-	char topwin[1024];
-	int i = 0;
-	lr_start_transaction(transaction);
-
-	nca_button_press("ORDER_CONTROL_ACTIONS_0");
-
-	nca_set_window("Actions");
-	nca_lov_retrieve_items("Actions", 1, 140);
-	nca_lov_select_item("Actions", "Additional Order Information");
-	nca_set_window("Additional Order Information");
-
-	while (i < 1000)
-	{
-		nca_get_top_window(topwin);
-		if (strcmp(topwin, "Cancel Query") != 0)
-			break;
-		i++;
-	}
-
-	nca_tab_select_item("VIEW_ORDER_INFO_TAB", "Invoices / Credit Memos");
-
-	lr_end_transaction(transaction, LR_PASS);
-}
 
 void viewInvoiceDetails(char* row)
 {
