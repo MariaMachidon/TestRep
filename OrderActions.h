@@ -7,7 +7,7 @@
 void createSalesOrder(char* customer, char* orderType, char* eventAlphaCode, char* edition, char* priceList, char* itemId)
 {
 	char* transaction = "createSalesOrder";
-	char message[1024];
+	char message[103];
 	char orderId[1024];
 
 	lr_start_transaction(transaction);
