@@ -1,0 +1,6 @@
+1. docker-machine start
+2. docker-machine env
+3. (Copy last row from command response and paste it) eval $("C:\Program Files\Docker\Docker\Resources\bin\docker-machine.exe" env)
+4. docker run -d -p 9000:9000 -v portainer_data:/data portainer/portainer
+5. docker-machine ssh default
+6. docker run -p 2375:2375 -v /var/run/docker.sock:/var/run/docker.sock codenvy/socat -d -d TCP-L:2375,fork UNIX:/var/run/docker.sock
